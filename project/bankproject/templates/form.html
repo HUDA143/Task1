@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+ <body>
+     <h2>FORM</h2>
+   <form action="{% url 'bankapp:form' %}" method="POST">
+       {% csrf_token %}
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="dob">DOB:</label><br>
+      <input type="date" id="dob" name="dob"><br>
+      <label for="age">Age:</label><br>
+      <input type="number" id="age" name="age"><br>
+      <label for="gender">Gender:</label><br>
+      <input type="radio" id="gender" name="gender" value="male"> Male<br>
+      <input type="radio" id="gender" name="gender" value="female"> Female<br>
+      <input type="radio" id="gender" name="gender" value="other"> Other<br>
+      <label for="phone">Phone :</label><br>
+      <input type="tel" id="phone" name="phone"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br>
+      <label for="address">Address:</label><br>
+      <textarea id="address" name="address"></textarea><br>
+      <label for="district">District:</label><br>
+      <select id="district" name="district">
+          <option value="TVM">TVM</option>
+          <option value="ernakulam">Ernakulam</option>
+          <option value="Kannur">Kannur</option>
+          <option value="Kollam">Kollam</option>
+          <option value="Malapuram">Malapuram</option>
+          <option value="Kozhikode">Kozhikode</option>
+          <option value="Iduki">Iduki</option>
+          <option value="Kottayam">Kottayam</option>
+          <option value="Pathanamthitta">Pathanamthitta</option>
+          <option value="Palakkad">Palakkad</option>
+          <option value="Kasargod">Kasargod</option>
+
+      </select><br>
+      <label for="branch">Branch:</label><br>
+      <select id="branch" name="branch">
+        <option value="aluva">Aluva</option>
+        <option value="edapally">Edapally</option>
+          <option value="pattambi">Pattambi</option>
+          <option value="kotta">Kotta</option>
+        <!-- Add more options for other branches -->
+      </select><br>
+      <label for="account">Account Type:</label><br>
+      <select id="account" name="account">
+        <option value="savings">Savings Account</option>
+        <option value="current">Current Account</option>
+        <!-- Add more options for other account types -->
+      </select><br>
+      <label for="materials">Materials Provide:</label><br>
+      <input type="checkbox" id="debit" name="materials" value="debit"> Debit Card<br>
+      <input type="checkbox" id="credit" name="materials" value="credit"> Credit Card<br>
+      <input type="checkbox" id="cheque" name="materials" value="cheque"> Cheque Book<br>
+      <!-- Add more options for other materials -->
+      <br>
+      <input type="submit" value="Submit">
+      <input type="button" value="Logout">
+</form>
+     <center>
+         <div class="alert alert-success">
+             {% for msg in  messages %}
+             <h3>{{ msg }}</h3>
+             {% endfor %}
+         </div>
+     </center>
+<div data-aos="fade-up" data-aos-delay="100">
+            <a href="{% url 'bankapp:index' %}">
+                 <button>Click Me</button>
+            </a>
+ </body>
+</html>
+</body>
+</html>

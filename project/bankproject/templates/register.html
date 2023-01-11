@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<!--Register-->
+<div class="container py-5">
+	<h1>Register</h1>
+	<form method="post" action="{% url 'bankapp:register' %}">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Submit">
+    </form>
+</div>
+</form>
+</body>
+</html>
